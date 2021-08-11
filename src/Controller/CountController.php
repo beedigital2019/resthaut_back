@@ -39,12 +39,15 @@ class CountController extends AbstractController
         // liste des commandes par resto 
         $cmd = $commandeRepository->findAll();
         $dataCommandes = [];
+        $dayCmd = ["Monday"=> 0,"Tuesday"=> 0,"Wednesday"=> 0,"Thursday"=> 0,"Friday"=> 0,"Saturday"=> 0,"Sunday" => 0];
         foreach ($cmd as $key => $commandes) {
             foreach ($commandes->getPlatCommandes() as $value) {
                 if($value->getPlat()->getUser()->getId() === $resto->getUser()->getId()) {
                     $dataCommandes [] = $commandes;
                 }
             }
+            
+           
             $days = ["Monday"=> 0,"Tuesday"=> 0,"Wednesday"=> 0,"Thursday"=> 0,"Friday"=> 0,"Saturday"=> 0,"Sunday" => 0];
             if ($dataCommandes) {
 

@@ -41,7 +41,6 @@ class AppFixtures extends Fixture
         $user->setUsername("beedigital")
             ->setRole($role_admin)
             ->setPassword($this->encoder->encodePassword($user, "admin123"))
-            ->setEmail("beedigital@beedigitaltech.com")
             ->setNomComplet("Bee Digital")
             ->setTelephone("773043248")
             ->setUpdatedAt(new \DateTime())
